@@ -11,7 +11,12 @@ type sendEmailParameters = {
 
 export const sendEmail = async ({ message, sender, target }: sendEmailParameters): Promise<void> => {
   try {
-    const resend = new Resend(getApiKey(target))
+    console.log({
+      message,
+      sender,
+      target
+    })
+    const resend = new Resend(getApiKey())
     const data = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
       to: target,
