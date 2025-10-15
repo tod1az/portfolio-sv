@@ -2,5 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const getApiKey = () => {
-  return process.env.TOMAS_API_KEY
+  const key = process.env.TOMAS_API_KEY
+  console.log(key)
+  return key
 }
